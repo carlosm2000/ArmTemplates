@@ -1,1 +1,1 @@
-# ArmTemplates
+# Sitecore XP Environment
