@@ -117,9 +117,9 @@
       "apiVersion": "[variables('apiVersion').vnet]",
       "name": "[variables('spokeVNetNameTidy')]",
       "location": "[parameters('location')]",
-      "dependsOn": [
-        "[variables('spokeNSG_id')]"
-      ],
+      // "dependsOn": [
+      //   "[variables('spokeNSG_id')]"
+      // ],
       "properties": {
           "addressSpace": {
               "addressPrefixes": [
