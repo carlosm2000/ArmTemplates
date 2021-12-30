@@ -46,7 +46,7 @@
     },
     "kubernetesVersion": {
       "type": "string",
-      "defaultValue":"1.21.7",
+      "defaultValue": "1.21.7",
       "metadata": {
         "description": "Kubernetes version"
       }
@@ -148,80 +148,81 @@
           }
         }
       }
-    },
-    {
-      "apiVersion": "[variables('resourcesApiVersion')]",
-      "name": "[concat(parameters('deploymentId'), '-KeyVault')]",
-      "type": "Microsoft.Resources/deployments",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[concat(uri(parameters('templateLinkBase'), 'KeyVault/KeyVaultWrapper.json'), parameters('templateLinkAccessToken'))]"
-        },
-        "parameters": {
-          "deploymentId": {
-            "value": "[parameters('deploymentId')]"
-          },
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "sitecoreAdminPassword": {
-            "value": "[parameters('sitecoreAdminPassword')]"
-          }
-        }
-      }
-    },
-    {
-      "apiVersion": "[variables('resourcesApiVersion')]",
-      "name": "[concat(parameters('deploymentId'), '-K8s')]",
-      "type": "Microsoft.Resources/deployments",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[concat(uri(parameters('templateLinkBase'), 'K8s/K8sWrapper.json'), parameters('templateLinkAccessToken'))]"
-        },
-        "parameters": {
-          "deploymentId": {
-            "value": "[parameters('deploymentId')]"
-          },
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "sitecoreSKU": {
-            "value": "[parameters('sitecoreSKU')]"
-          },
-          "dnsPrefix": {
-            "value": "[parameters('dnsPrefix')]"
-          },
-          "kubernetesVersion": {
-            "value": "[parameters('kubernetesVersion')]"
-          },
-          "dockerBridgeCidr": {
-            "value": "[parameters('dockerBridgeCidr')]"
-          },
-          "clusterServiceCidr": {
-            "value": "[parameters('clusterServiceCidr')]"
-          },
-          "clusterDnsServiceIp": {
-            "value": "[parameters('clusterDnsServiceIp')]"
-          },
-          "clusterManagedIdentityName": {
-            "value": "[parameters('clusterManagedIdentityName')]"
-          },
-          "clusterWindowsUsername": {
-            "value": "[parameters('clusterWindowsUsername')]"
-          },
-          "clusterWindowsPassword": {
-            "value": "[parameters('clusterWindowsPassword')]"
-          },
-          "clusterLinuxUsername": {
-            "value": "[parameters('clusterLinuxUsername')]"
-          },
-          "clusterLinuxSSHKey": {
-            "value": "[parameters('clusterLinuxSSHKey')]"
-          }
-        }
-      }
     }
+    //,
+    // {
+    //   "apiVersion": "[variables('resourcesApiVersion')]",
+    //   "name": "[concat(parameters('deploymentId'), '-KeyVault')]",
+    //   "type": "Microsoft.Resources/deployments",
+    //   "properties": {
+    //     "mode": "Incremental",
+    //     "templateLink": {
+    //       "uri": "[concat(uri(parameters('templateLinkBase'), 'KeyVault/KeyVaultWrapper.json'), parameters('templateLinkAccessToken'))]"
+    //     },
+    //     "parameters": {
+    //       "deploymentId": {
+    //         "value": "[parameters('deploymentId')]"
+    //       },
+    //       "location": {
+    //         "value": "[parameters('location')]"
+    //       },
+    //       "sitecoreAdminPassword": {
+    //         "value": "[parameters('sitecoreAdminPassword')]"
+    //       }
+    //     }
+    //   }
+    // },
+    // {
+    //   "apiVersion": "[variables('resourcesApiVersion')]",
+    //   "name": "[concat(parameters('deploymentId'), '-K8s')]",
+    //   "type": "Microsoft.Resources/deployments",
+    //   "properties": {
+    //     "mode": "Incremental",
+    //     "templateLink": {
+    //       "uri": "[concat(uri(parameters('templateLinkBase'), 'K8s/K8sWrapper.json'), parameters('templateLinkAccessToken'))]"
+    //     },
+    //     "parameters": {
+    //       "deploymentId": {
+    //         "value": "[parameters('deploymentId')]"
+    //       },
+    //       "location": {
+    //         "value": "[parameters('location')]"
+    //       },
+    //       "sitecoreSKU": {
+    //         "value": "[parameters('sitecoreSKU')]"
+    //       },
+    //       "dnsPrefix": {
+    //         "value": "[parameters('dnsPrefix')]"
+    //       },
+    //       "kubernetesVersion": {
+    //         "value": "[parameters('kubernetesVersion')]"
+    //       },
+    //       "dockerBridgeCidr": {
+    //         "value": "[parameters('dockerBridgeCidr')]"
+    //       },
+    //       "clusterServiceCidr": {
+    //         "value": "[parameters('clusterServiceCidr')]"
+    //       },
+    //       "clusterDnsServiceIp": {
+    //         "value": "[parameters('clusterDnsServiceIp')]"
+    //       },
+    //       "clusterManagedIdentityName": {
+    //         "value": "[parameters('clusterManagedIdentityName')]"
+    //       },
+    //       "clusterWindowsUsername": {
+    //         "value": "[parameters('clusterWindowsUsername')]"
+    //       },
+    //       "clusterWindowsPassword": {
+    //         "value": "[parameters('clusterWindowsPassword')]"
+    //       },
+    //       "clusterLinuxUsername": {
+    //         "value": "[parameters('clusterLinuxUsername')]"
+    //       },
+    //       "clusterLinuxSSHKey": {
+    //         "value": "[parameters('clusterLinuxSSHKey')]"
+    //       }
+    //     }
+    //   }
+    // }
   ]
 }
