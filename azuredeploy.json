@@ -103,7 +103,7 @@
     },
     "kubernetesVersion": {
       "type": "string",
-      "defaultValue":"1.21.7",
+      "defaultValue": "1.21.7",
       "metadata": {
         "description": "Kubernetes version"
       }
@@ -156,50 +156,49 @@
     }
   },
   "resources": [
-    {
-      "apiVersion": "[variables('resourcesApiVersion')]",
-      "name": "[concat(parameters('deploymentId'), '-Networking')]",
-      "type": "Microsoft.Resources/deployments",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[concat(uri(parameters('templateLinkBase'), 'Networking/NetworkingWrapper.json'), parameters('templateLinkAccessToken'))]"
-        },
-        "parameters": {
-          "deploymentId": {
-            "value": "[parameters('deploymentId')]"
-          },
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "hubVNetAddressPrefix": {
-            "value": "[parameters('hubVNetAddressPrefix')]"
-          },
-          "hubVPNSubnetAddressPrefix": {
-            "value": "[parameters('hubVPNSubnetAddressPrefix')]"
-          },
-          "hubBastionSubnetAddressPrefix": {
-            "value": "[parameters('hubBastionSubnetAddressPrefix')]"
-          },
-          "hubFirewallSubnetAddressPrefix": {
-            "value": "[parameters('hubFirewallSubnetAddressPrefix')]"
-          },
-          "spokeVNetAddressPrefix": {
-            "value": "[parameters('spokeVNetAddressPrefix')]"
-          },
-          "spokeAppGatewaySubnetAddressPrefix": {
-            "value": "[parameters('spokeAppGatewaySubnetAddressPrefix')]"
-          },
-          "spokePrivateSubnetAddressPrefix": {
-            "value": "[parameters('spokePrivateSubnetAddressPrefix')]"
-          },
-          "spokeClusterSubnetAddressPrefix": {
-            "value": "[parameters('spokeClusterSubnetAddressPrefix')]"
-          }
-        }
-      }
-    }
-    // ,
+    // {
+    //   "apiVersion": "[variables('resourcesApiVersion')]",
+    //   "name": "[concat(parameters('deploymentId'), '-Networking')]",
+    //   "type": "Microsoft.Resources/deployments",
+    //   "properties": {
+    //     "mode": "Incremental",
+    //     "templateLink": {
+    //       "uri": "[concat(uri(parameters('templateLinkBase'), 'Networking/NetworkingWrapper.json'), parameters('templateLinkAccessToken'))]"
+    //     },
+    //     "parameters": {
+    //       "deploymentId": {
+    //         "value": "[parameters('deploymentId')]"
+    //       },
+    //       "location": {
+    //         "value": "[parameters('location')]"
+    //       },
+    //       "hubVNetAddressPrefix": {
+    //         "value": "[parameters('hubVNetAddressPrefix')]"
+    //       },
+    //       "hubVPNSubnetAddressPrefix": {
+    //         "value": "[parameters('hubVPNSubnetAddressPrefix')]"
+    //       },
+    //       "hubBastionSubnetAddressPrefix": {
+    //         "value": "[parameters('hubBastionSubnetAddressPrefix')]"
+    //       },
+    //       "hubFirewallSubnetAddressPrefix": {
+    //         "value": "[parameters('hubFirewallSubnetAddressPrefix')]"
+    //       },
+    //       "spokeVNetAddressPrefix": {
+    //         "value": "[parameters('spokeVNetAddressPrefix')]"
+    //       },
+    //       "spokeAppGatewaySubnetAddressPrefix": {
+    //         "value": "[parameters('spokeAppGatewaySubnetAddressPrefix')]"
+    //       },
+    //       "spokePrivateSubnetAddressPrefix": {
+    //         "value": "[parameters('spokePrivateSubnetAddressPrefix')]"
+    //       },
+    //       "spokeClusterSubnetAddressPrefix": {
+    //         "value": "[parameters('spokeClusterSubnetAddressPrefix')]"
+    //       }
+    //     }
+    //   }
+    // },
     // {
     //   "apiVersion": "[variables('resourcesApiVersion')]",
     //   "name": "[concat(parameters('deploymentId'), '-Hub')]",
@@ -225,66 +224,66 @@
     //     }
     //   }
     // },
-    // {
-    //   "apiVersion": "[variables('resourcesApiVersion')]",
-    //   "name": "[concat(parameters('deploymentId'), '-Spoke')]",
-    //   "type": "Microsoft.Resources/deployments",
-    //   "properties": {
-    //     "mode": "Incremental",
-    //     "templateLink": {
-    //       "uri": "[concat(uri(parameters('templateLinkBase'), 'Infrastructure/Spoke/SpokeWrapper.json'), parameters('templateLinkAccessToken'))]"
-    //     },
-    //     "parameters": {
-    //       "deploymentId": {
-    //         "value": "[parameters('deploymentId')]"
-    //       },
-    //       "location": {
-    //         "value": "[parameters('location')]"
-    //       },
-    //       "sitecoreSKU": {
-    //         "value": "[parameters('sitecoreSKU')]"
-    //       },
-    //       "sqlServerLogin": {
-    //         "value": "[parameters('sqlServerLogin')]"
-    //       },
-    //       "sqlServerPassword": {
-    //         "value": "[parameters('sqlServerPassword')]"
-    //       },
-    //       "dnsPrefix": {
-    //         "value": "[parameters('clusterDnsPrefix')]"
-    //       },
-    //       "kubernetesVersion": {
-    //         "value": "[parameters('kubernetesVersion')]"
-    //       },
-    //       "dockerBridgeCidr": {
-    //         "value": "[parameters('dockerBridgeCidr')]"
-    //       },
-    //       "clusterServiceCidr": {
-    //         "value": "[parameters('clusterServiceCidr')]"
-    //       },
-    //       "clusterDnsServiceIp": {
-    //         "value": "[parameters('clusterDnsServiceIp')]"
-    //       },
-    //       "clusterManagedIdentityName": {
-    //         "value": "[parameters('clusterManagedIdentityName')]"
-    //       },
-    //       "clusterWindowsUsername": {
-    //         "value": "[parameters('clusterWindowsUsername')]"
-    //       },
-    //       "clusterWindowsPassword": {
-    //         "value": "[parameters('clusterWindowsPassword')]"
-    //       },
-    //       "clusterLinuxUsername": {
-    //         "value": "[parameters('clusterLinuxUsername')]"
-    //       },
-    //       "clusterLinuxSSHKey": {
-    //         "value": "[parameters('clusterLinuxSSHKey')]"
-    //       },
-    //       "sitecoreAdminPassword": {
-    //         "value": "[parameters('sitecoreAdminPassword')]"
-    //       }
-    //     }
-    //   }
-    // }
+    {
+      "apiVersion": "[variables('resourcesApiVersion')]",
+      "name": "[concat(parameters('deploymentId'), '-Spoke')]",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(uri(parameters('templateLinkBase'), 'Infrastructure/Spoke/SpokeWrapper.json'), parameters('templateLinkAccessToken'))]"
+        },
+        "parameters": {
+          "deploymentId": {
+            "value": "[parameters('deploymentId')]"
+          },
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "sitecoreSKU": {
+            "value": "[parameters('sitecoreSKU')]"
+          },
+          "sqlServerLogin": {
+            "value": "[parameters('sqlServerLogin')]"
+          },
+          "sqlServerPassword": {
+            "value": "[parameters('sqlServerPassword')]"
+          },
+          "dnsPrefix": {
+            "value": "[parameters('clusterDnsPrefix')]"
+          },
+          "kubernetesVersion": {
+            "value": "[parameters('kubernetesVersion')]"
+          },
+          "dockerBridgeCidr": {
+            "value": "[parameters('dockerBridgeCidr')]"
+          },
+          "clusterServiceCidr": {
+            "value": "[parameters('clusterServiceCidr')]"
+          },
+          "clusterDnsServiceIp": {
+            "value": "[parameters('clusterDnsServiceIp')]"
+          },
+          "clusterManagedIdentityName": {
+            "value": "[parameters('clusterManagedIdentityName')]"
+          },
+          "clusterWindowsUsername": {
+            "value": "[parameters('clusterWindowsUsername')]"
+          },
+          "clusterWindowsPassword": {
+            "value": "[parameters('clusterWindowsPassword')]"
+          },
+          "clusterLinuxUsername": {
+            "value": "[parameters('clusterLinuxUsername')]"
+          },
+          "clusterLinuxSSHKey": {
+            "value": "[parameters('clusterLinuxSSHKey')]"
+          },
+          "sitecoreAdminPassword": {
+            "value": "[parameters('sitecoreAdminPassword')]"
+          }
+        }
+      }
+    }
   ]
 }
