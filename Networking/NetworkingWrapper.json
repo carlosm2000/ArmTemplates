@@ -103,38 +103,39 @@
           }
         }
       }
-    },
-    {
-      "apiVersion": "[variables('resourcesApiVersion')]",
-      "name": "[concat(parameters('deploymentId'), '-Spoke-VNet')]",
-      "type": "Microsoft.Resources/deployments",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[concat(uri(parameters('templateLinkBase'), 'VNets/SpokeVNet.json'), parameters('templateLinkAccessToken'))]"
-        },
-        "parameters": {
-          "deploymentId": {
-            "value": "[parameters('deploymentId')]"
-          },
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "spokeVNetAddressPrefix": {
-            "value": "[parameters('spokeVNetAddressPrefix')]"
-          },
-          "spokeAppGatewaySubnetAddressPrefix": {
-            "value": "[parameters('spokeAppGatewaySubnetAddressPrefix')]"
-          },
-          "spokePrivateSubnetAddressPrefix": {
-            "value": "[parameters('spokePrivateSubnetAddressPrefix')]"
-          },
-          "spokeClusterSubnetAddressPrefix": {
-            "value": "[parameters('spokeClusterSubnetAddressPrefix')]"
-          }
-        }
-      }
     }
+    //,
+    // {
+    //   "apiVersion": "[variables('resourcesApiVersion')]",
+    //   "name": "[concat(parameters('deploymentId'), '-Spoke-VNet')]",
+    //   "type": "Microsoft.Resources/deployments",
+    //   "properties": {
+    //     "mode": "Incremental",
+    //     "templateLink": {
+    //       "uri": "[concat(uri(parameters('templateLinkBase'), 'VNets/SpokeVNet.json'), parameters('templateLinkAccessToken'))]"
+    //     },
+    //     "parameters": {
+    //       "deploymentId": {
+    //         "value": "[parameters('deploymentId')]"
+    //       },
+    //       "location": {
+    //         "value": "[parameters('location')]"
+    //       },
+    //       "spokeVNetAddressPrefix": {
+    //         "value": "[parameters('spokeVNetAddressPrefix')]"
+    //       },
+    //       "spokeAppGatewaySubnetAddressPrefix": {
+    //         "value": "[parameters('spokeAppGatewaySubnetAddressPrefix')]"
+    //       },
+    //       "spokePrivateSubnetAddressPrefix": {
+    //         "value": "[parameters('spokePrivateSubnetAddressPrefix')]"
+    //       },
+    //       "spokeClusterSubnetAddressPrefix": {
+    //         "value": "[parameters('spokeClusterSubnetAddressPrefix')]"
+    //       }
+    //     }
+    //   }
+    // }
     //,
     // {
     //   "apiVersion": "[variables('resourcesApiVersion')]",
