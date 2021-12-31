@@ -99,34 +99,34 @@
     }
   },
   "resources": [
-    {
-      "apiVersion": "[variables('resourcesApiVersion')]",
-      "name": "[concat(parameters('deploymentId'), '-SQL-Server')]",
-      "type": "Microsoft.Resources/deployments",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[concat(uri(parameters('templateLinkBase'), 'SQL/SitecoreSQL.json'), parameters('templateLinkAccessToken'))]"
-        },
-        "parameters": {
-          "deploymentId": {
-            "value": "[parameters('deploymentId')]"
-          },
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "sitecoreSKU": {
-            "value": "[parameters('sitecoreSKU')]"
-          },
-          "sqlServerLogin": {
-            "value": "[parameters('sqlServerLogin')]"
-          },
-          "sqlServerPassword": {
-            "value": "[parameters('sqlServerPassword')]"
-          }
-        }
-      }
-    },
+    // {
+    //   "apiVersion": "[variables('resourcesApiVersion')]",
+    //   "name": "[concat(parameters('deploymentId'), '-SQL-Server')]",
+    //   "type": "Microsoft.Resources/deployments",
+    //   "properties": {
+    //     "mode": "Incremental",
+    //     "templateLink": {
+    //       "uri": "[concat(uri(parameters('templateLinkBase'), 'SQL/SitecoreSQL.json'), parameters('templateLinkAccessToken'))]"
+    //     },
+    //     "parameters": {
+    //       "deploymentId": {
+    //         "value": "[parameters('deploymentId')]"
+    //       },
+    //       "location": {
+    //         "value": "[parameters('location')]"
+    //       },
+    //       "sitecoreSKU": {
+    //         "value": "[parameters('sitecoreSKU')]"
+    //       },
+    //       "sqlServerLogin": {
+    //         "value": "[parameters('sqlServerLogin')]"
+    //       },
+    //       "sqlServerPassword": {
+    //         "value": "[parameters('sqlServerPassword')]"
+    //       }
+    //     }
+    //   }
+    // },
     {
       "apiVersion": "[variables('resourcesApiVersion')]",
       "name": "[concat(parameters('deploymentId'), '-Redis-Cache')]",
