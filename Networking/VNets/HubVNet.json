@@ -183,7 +183,8 @@
           }
         ]
       }
-    },
+    }
+    /*,
     {
       "type": "Microsoft.Network/virtualNetworks",
       "apiVersion": "[variables('apiVersion').vnet]",
@@ -246,5 +247,6 @@
           "virtualNetworkPeerings": []
       }
     }
+    */
   ]
 }
