@@ -35,10 +35,10 @@
       "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
       "name": "[concat(parameters('hubVNetName'), '/peering_', variables('hubVNetNameTidy'), '_', variables('spokeVNetNameTidy'))]",
       "location": "[parameters('location')]",
-      // "dependsOn": [
-      //   "[variables('hubVNet_id')]",
-      //   "[variables('spokeVNet_id')]"
-      // ],
+      "dependsOn": [
+        "[variables('hubVNet_id')]",
+        "[variables('spokeVNet_id')]"
+      ],
       "properties": {
         "allowVirtualNetworkAccess": true,
         "allowForwardedTraffic": true,
@@ -54,10 +54,10 @@
       "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
       "name": "[concat(parameters('spokeVNetName'), '/gwPeering_', variables('spokeVNetNameTidy'), '_', variables('hubVNetNameTidy'))]",
       "location": "[parameters('location')]",
-      // "dependsOn": [
-      //   "[variables('hubVNet_id')]",
-      //   "[variables('spokeVNet_id')]"
-      // ],
+      "dependsOn": [
+        "[variables('hubVNet_id')]",
+        "[variables('spokeVNet_id')]"
+      ],
       "properties": {
         "allowVirtualNetworkAccess": true,
         "allowForwardedTraffic": true,
