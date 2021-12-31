@@ -33,68 +33,68 @@
     }
   },
   "resources": [
-    {
-      "apiVersion": "[variables('resourcesApiVersion')]",
-      "name": "[concat(parameters('deploymentId'), '-Firewall')]",
-      "type": "Microsoft.Resources/deployments",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[concat(uri(parameters('templateLinkBase'), 'FirewallSubnet/Firewall.json'), parameters('templateLinkAccessToken'))]"
-        },
-        "parameters": {
-          "deploymentId": {
-            "value": "[parameters('deploymentId')]"
-          },
-          "location": {
-            "value": "[parameters('location')]"
-          }
-        }
-      }
-    },
-    {
-      "apiVersion": "[variables('resourcesApiVersion')]",
-      "name": "[concat(parameters('deploymentId'), '-VPN')]",
-      "type": "Microsoft.Resources/deployments",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[concat(uri(parameters('templateLinkBase'), 'VPNSubnet/VPNGateway.json'), parameters('templateLinkAccessToken'))]"
-        },
-        "parameters": {
-          "deploymentId": {
-            "value": "[parameters('deploymentId')]"
-          },
-          "location": {
-            "value": "[parameters('location')]"
-          }
-        }
-      }
-    },
-    {
-      "apiVersion": "[variables('resourcesApiVersion')]",
-      "name": "[concat(parameters('deploymentId'), '-Bastion-Agent')]",
-      "type": "Microsoft.Resources/deployments",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[concat(uri(parameters('templateLinkBase'), 'BastionSubnet/BastionSubnetWrapper.json'), parameters('templateLinkAccessToken'))]"
-        },
-        "parameters": {
-          "deploymentId": {
-            "value": "[parameters('deploymentId')]"
-          },
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "vmAdminUserName": {
-            "value": "[parameters('vmAdminUserName')]"
-          },
-          "vmAdminPassword": {
-            "value": "[parameters('vmAdminPassword')]"
-          }
-        }
-      }
-    }
+    // {
+    //   "apiVersion": "[variables('resourcesApiVersion')]",
+    //   "name": "[concat(parameters('deploymentId'), '-Firewall')]",
+    //   "type": "Microsoft.Resources/deployments",
+    //   "properties": {
+    //     "mode": "Incremental",
+    //     "templateLink": {
+    //       "uri": "[concat(uri(parameters('templateLinkBase'), 'FirewallSubnet/Firewall.json'), parameters('templateLinkAccessToken'))]"
+    //     },
+    //     "parameters": {
+    //       "deploymentId": {
+    //         "value": "[parameters('deploymentId')]"
+    //       },
+    //       "location": {
+    //         "value": "[parameters('location')]"
+    //       }
+    //     }
+    //   }
+    // },
+    // {
+    //   "apiVersion": "[variables('resourcesApiVersion')]",
+    //   "name": "[concat(parameters('deploymentId'), '-VPN')]",
+    //   "type": "Microsoft.Resources/deployments",
+    //   "properties": {
+    //     "mode": "Incremental",
+    //     "templateLink": {
+    //       "uri": "[concat(uri(parameters('templateLinkBase'), 'VPNSubnet/VPNGateway.json'), parameters('templateLinkAccessToken'))]"
+    //     },
+    //     "parameters": {
+    //       "deploymentId": {
+    //         "value": "[parameters('deploymentId')]"
+    //       },
+    //       "location": {
+    //         "value": "[parameters('location')]"
+    //       }
+    //     }
+    //   }
+    // },
+    // {
+    //   "apiVersion": "[variables('resourcesApiVersion')]",
+    //   "name": "[concat(parameters('deploymentId'), '-Bastion-Agent')]",
+    //   "type": "Microsoft.Resources/deployments",
+    //   "properties": {
+    //     "mode": "Incremental",
+    //     "templateLink": {
+    //       "uri": "[concat(uri(parameters('templateLinkBase'), 'BastionSubnet/BastionSubnetWrapper.json'), parameters('templateLinkAccessToken'))]"
+    //     },
+    //     "parameters": {
+    //       "deploymentId": {
+    //         "value": "[parameters('deploymentId')]"
+    //       },
+    //       "location": {
+    //         "value": "[parameters('location')]"
+    //       },
+    //       "vmAdminUserName": {
+    //         "value": "[parameters('vmAdminUserName')]"
+    //       },
+    //       "vmAdminPassword": {
+    //         "value": "[parameters('vmAdminPassword')]"
+    //       }
+    //     }
+    //   }
+    // }
   ]
 }
