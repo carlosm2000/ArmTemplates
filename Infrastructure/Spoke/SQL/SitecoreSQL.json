@@ -35,7 +35,7 @@
 	  "spokePrivateSubnetNameTidy":  "[toLower(trim(parameters('spokePrivateSubnetName')))]",
     "sqlPrivateEndpointNameTidy":"[toLower(trim(parameters('sqlPrivateEndpointName')))]",
 
-    "elasticPool_id": "[resourceId('Microsoft.Sql/servers/elasticPools', variables('elasticPoolNameTidy'), '-01')]",
+    "elasticPool_id": "[resourceId('Microsoft.Sql/servers/elasticPools', variables('elasticPoolNameTidy'))]",
     "sqlServer_id": "[resourceId('Microsoft.Sql/servers', variables('sqlServerNameTidy'))]",
     "spokeVNet_id": "[resourceId('Microsoft.Network/virtualNetworks',variables('spokeVNetNameTidy'))]",
 	  "spokePrivateSubnet_id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('spokeVNetNameTidy'),variables('spokePrivateSubnetNameTidy'))]",
