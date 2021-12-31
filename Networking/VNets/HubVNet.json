@@ -190,9 +190,9 @@
       "name": "[variables('hubVNetNameTidy')]",
       "comments": "HUB Virtual Network (VNet)",
       "location": "[parameters('location')]",
-      "dependsOn": [
-        "[variables('hubNSG_id')]"
-      ],
+      // "dependsOn": [
+      //   "[variables('hubNSG_id')]"
+      // ],
       "properties": {
           "addressSpace": {
               "addressPrefixes": [
