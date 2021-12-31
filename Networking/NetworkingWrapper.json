@@ -103,8 +103,7 @@
           }
         }
       }
-    }
-    /*,
+    },
     {
       "apiVersion": "[variables('resourcesApiVersion')]",
       "name": "[concat(parameters('deploymentId'), '-Spoke-VNet')]",
@@ -155,6 +154,5 @@
         }
       }
     }
-    */
   ]
 }
